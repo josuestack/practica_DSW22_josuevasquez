@@ -1,0 +1,14 @@
+fun main() {
+   
+    val numerosPares = mutableListOf<Int>()
+
+    
+    for (num in 1..100) {
+        if (num % 2 == 0) {
+            numerosPares.add(num)
+        }
+    }
+
+   
+    println("Cantidad de números pares entre 1 y 100: ${numerosPares.size}")
+}
