@@ -1,0 +1,72 @@
+// Clase para representar una dirección
+data class Direccion(
+    val departamento: String,
+    val municipio: String,
+    val distrito: String,
+    val complemento: String
+)
+
+// Clase para representar un producto
+data class Producto(
+    val precio: String,
+    val stock: Int,
+    val nombre: String,
+    val color: String,
+    val id: String,
+    val descripcion: String,
+    val direccion: Direccion 
+)
+
+fun main() {
+    
+    val direccion1 = Direccion("San Salvador", "San Salvador", "Centro", "Calle Arce #25")
+    val direccion2 = Direccion("La Libertad", "Santa Tecla", "Distrito 2", "Av. Los Andes #10")
+    val direccion3 = Direccion("Sonsonate", "Nahuizalco", "Distrito 1", "Barrio El Centro")
+
+    
+    val producto1 = Producto(
+        "3.50",
+        20,
+        "Café Juan Valdez",
+        "Café",
+        "001",
+        "Café en vaso",
+        direccion1
+    )
+
+    val producto2 = Producto(
+        "4.50",
+        10,
+        "Latte Vainilla",
+        "Blanco/Café",
+        "002",
+        "Taza 6oz",
+        direccion2
+    )
+
+    val producto3 = Producto(
+        "2.50",
+        20,
+        "Café Coscafé",
+        "Café/Negro",
+        "003",
+        "Vaso 10oz",
+        direccion3
+    )
+
+    // Lista de productos
+    val listProducts = listOf(producto1, producto2, producto3)
+
+   
+    for (p in listProducts) {
+        println("Producto: ${p.nombre}")
+        println("Precio: $${p.precio}")
+        println("Stock: ${p.stock}")
+        println("Color: ${p.color}")
+        println("ID: ${p.id}")
+        println("Descripción: ${p.descripcion}")
+        println("Ubicación: ${p.direccion.departamento}, ${p.direccion.municipio}, ${p.direccion.distrito}")
+        println("Detalle adicional: ${p.direccion.complemento}")
+        println("----------------------------------------------------")
+    }
+}
